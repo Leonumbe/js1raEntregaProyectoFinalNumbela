@@ -72,50 +72,10 @@ function sortByPrice(){
     document.write(`<button onclick="location.reload()">Volver</button>`)
 }
 
-//aca me queme mall gonza ya no se que mas probar !!!
-//capturo el precio en la array bookedRoom y dps el nro de dias en la var qdays1
 
 const bookedRoom = []
-// function selectionRoom(d){
-//     switch (d) {
- 
-//         case "1":
-//             alert("Listo.");
-//             bookedRoom.push("Charleroi'");
-//             return 1;
-            
-//         case "2":
-//             alert("Listo");
-//             bookedRoom.push("Namur");
-//             return 2;
-
-//         case "3":
-//             alert("Listo");
-//             bookedRoom.push("Nivelles");
-//             return 3;
-        
-//         case "4":
-//             alert("Excelente eleccion");
-//             bookedRoom.push("Moron");
-//             return 4;
-        
-//         case "5":
-//             alert("Excelente eleccion");
-//             bookedRoom.push("Luven");
-//             return 5;
-  
-//         case "6":
-//             alert("Excelente eleccion");
-//             bookedRoom.push("Artwerpen");
-//             return 6;
- 
-//         default:
-//             alert("La habitacion no esta disponible");
-//             bookedRoom.push("Operacion CANCELADA");
-//             return 0;
-//     }
-// }
 function selectionRoom(R){
+    
     switch (R) {
  
         case "1":
@@ -155,29 +115,34 @@ function selectionRoom(R){
     }
 }
 function booked(){
+       let total = 0
        let elegido = prompt('Ingrese el Id de la habitacion \n1- Charleroi $50\n2- Namur $55\n3- Nivelles $45\n4- Moron $70\n5- Bruges $75\n6- Artwerpen $80\n ESC para cancelar');
     
+       for (let i = 0; i< 1; i++) {
        if (elegido === 'ESC' || elegido ==='esc' ) { 
     
            alert("Cancelado");
-    
+         break;
         }
-        let qDays1 = prompt("Ingrese el numero de dias\n 1-1 dia\n 2-2 dias\n 3-3 dias\n 4-4 dias\n 5-5 dias\n 6-6 dias\n ESC para cancelar")
-    //     //if (qDays1(isNaN(prompt('Vuelva a ingresar un numero')))){ 
-    //    //     alert("Error");
+       let qDays1 = parseInt(prompt("Ingrese el numero de dias\n 1-1 dia\n 2-2 dias\n 3-3 dias\n 4-4 dias\n 5-5 dias\n 6-6 dias\n ESC para cancelar"))
+    //     if (qDays1(isNaN(prompt('Vuelva a ingresar un numero')))){ 
+    //     alert("Error");
         
-         return qDays1
-      let total = booked(bookedRoom) * qDays1; // RETORNAR MULTIPLICACION
-      return total  
-      console.log(total)
+        
+       total += selectionRoom(elegido); 
+       let total2= total*qDays1// RETORNAR MULTIPLICACION
+     // console.log(total)
        
     document.write("A seleccionado: " + bookedRoom.length + " rooms <br>"); //cantidad  hab seleccionadas
-    document.write("Total a abonar es: " + total + "<br>"); // el total.
+    document.write("Total a abonar es: " + total2 + "<br>"); // el total.
     document.write(`<button onclick="location.reload()">Volver</button>`)
-    document.write(`<button onclick="elegido()">Mostrar Productos</button>`+ "</br>" )
+    document.write(`<button onclick="elegido()">show Rooms</button>`+ "</br>" )
     
     }
-  
+}
+function elegido (){
+    document.write("Habitacion Seleccionada: " + bookedRoom.join(" - ") + "<br>") //muestra elegidos.push
+}
 
 
 
