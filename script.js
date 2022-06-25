@@ -118,7 +118,7 @@ function booked(){
        let total = 0
        let elegido = prompt('Ingrese el Id de la habitacion \n1- Charleroi $50\n2- Namur $55\n3- Nivelles $45\n4- Moron $70\n5- Bruges $75\n6- Artwerpen $80\n ESC para cancelar');
     
-       for (let i = 0; i< 1; i++) {
+       for (let i = 0; i< total.length; i++) {
        if (elegido === 'ESC' || elegido ==='esc' ) { 
     
            alert("Cancelado");
